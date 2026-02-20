@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King Technology</title>
+    <meta name="description" content="Soluções em Tecnologia e Segurança" />
+    <meta name="author" content="King Technology" />
+    <link rel="icon" href="src/ico.png" type="image/png">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+
+        .bg-image {
+            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+                              url('src/bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .collage-container {
+            position: relative;
+            height: 550px;
+            margin-bottom: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-overlap {
+            position: absolute;
+            width: 250px;
+            height: 400px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, z-index 0.3s;
+            border-radius: 8px;
+        }
+
+        .img-1 {
+            transform: rotate(-8deg);
+            left: 15%;
+            top: 40px;
+            z-index: 1;
+        }
+
+        .img-2 {
+            transform: rotate(2deg);
+            top: 90px;
+            z-index: 3;
+        }
+
+        .img-3 {
+            transform: rotate(10deg);
+            right: 15%;
+            top: 10px;
+            z-index: 2;
+        }
+
+        .img-overlap:hover {
+            transform: scale(1.1) rotate(0deg);
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .collage-container {
+                height: 280px;
+            }
+            .img-overlap {
+                width: 140px;
+                height: 180px;
+            }
+            .img-1 { left: 5%; }
+            .img-3 { right: 5%; }
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00d4ff;
+        }
+
+        nav ul li a.active {
+            color: #00d4ff;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .content-box {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 15px;
+            max-width: 1024px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-box h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .service-list {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+            padding: 0;
+        }
+
+        .service-list li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .service-list li::before {
+            content: "•";
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .content-box {
+                padding: 1.5rem;
+            }
+            .content-box h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-image"></div>
+
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <img src="src/logo.png" alt="King Technology" onerror="this.style.display='none'; this.parentNode.innerText='KING TECHNOLOGY'">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Início</a></li>
+                    <li><a href="sobrenos">Sobre Nós</a></li>
+                    <li><a href="servicos">Serviços</a></li>
+                    <li><a href="contato">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="content-box">
+                <div class="collage-container">
+                    <img src="src/sv1-2.jpg" alt="Infraestrutura" class="img-overlap img-1">
+                    <img src="src/sv5-6.jpg" alt="Segurança" class="img-overlap img-2">
+                    <img src="src/sv3.jpg" alt="Tecnologia" class="img-overlap img-3">
+                </div>
+
+                <h1>Bem-vindo à King Technology</h1>
+                <p><strong>Conectando infraestrutura, segurança e inteligência.</strong></p>
+                <br>
+                <p>
+                    Seja em complexas redes urbanas ou instalações críticas, permitimos que nossos clientes operem com máxima eficiência,
+                    protegendo seu patrimônio e garantindo a continuidade de seus sistemas essenciais.
+                </p>
+                <br>
+                <p>
+                    A King Technology lidera projetos de integração tecnológica, fornecendo soluções sob medida
+                    para condomínios, empresas e setor governamental.
+                </p>
+                <br>
+                <hr style="opacity: 0.3;">
+                <br>
+                <h2>Nossos Pilares de Atuação</h2>
+                <br>
+                <p style="margin-bottom: 20px;">
+                    Oferecemos um ecossistema completo, da infraestrutura física à inteligência de dados:
+                </p>
+
+                <ul class="service-list">
+                    <li>
+                        <strong>Infraestrutura e Conectividade:</strong> Projetos em Fibra Óptica e Rádio, Cabeamento Estruturado e Redundância de Link (WAN/LAN).
+                    </li>
+                    <li>
+                        <strong>Segurança Eletrônica Inteligente:</strong> CFTV IP com Inteligência Artificial, Alarmes Monitorados e Proteção Perimetral Avançada.
+                    </li>
+                    <li>
+                        <strong>Controle de Acesso e Automação:</strong> Biometria Facial, Tags Veiculares, Gestão de Visitantes via App e Motores de Alta Performance.
+                    </li>
+                    <li>
+                        <strong>Comunicação Unificada:</strong> Interfonia Digital, VoIP, Telemetria e Redes Corporativas Seguras.
+                    </li>
+                    <li>
+                        <strong>TI e Continuidade (Hardware/Software):</strong> Suporte técnico especializado, Gestão de Servidores e Soluções de Energia (Nobreaks e Geradores).
+                    </li>
+                </ul>
+
+                <br><br>
+                <p>
+                    <strong>Tecnologia que funciona. Segurança que protege.</strong><br>
+                    Nossa equipe técnica é composta por especialistas prontos para atender demandas com eficiência e qualidade.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 - King Technology - Todos os direitos reservados | <a href="/privacidade" style="color: #00d4ff;">Privacidade</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>

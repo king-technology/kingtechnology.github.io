@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - King Technology</title>
+    <meta name="description" content="Saiba mais sobre a King Technology" />
+    <meta name="author" content="King Technology" />
+    <link rel="icon" href="/src/ico.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+
+        .bg-image {
+            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+                              url('/src/bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00d4ff;
+        }
+
+        nav ul li a.active {
+            color: #00d4ff;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 5%;
+        }
+
+        .content-box {
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 15px;
+            max-width: 1024px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .content-box h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            border-bottom: 2px solid #00d4ff;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .content-box h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #00d4ff;
+        }
+
+        .content-box p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+
+        .about-img {
+            float: right;
+            margin-left: 30px;
+            margin-bottom: 20px;
+            width: 40%;
+            max-width: 400px;
+            border-radius: 10px;
+            border: 4px solid rgba(255,255,255,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .content-box {
+                padding: 1.5rem;
+            }
+            .content-box h1 {
+                font-size: 1.8rem;
+            }
+
+            .about-img {
+                float: none;
+                display: block;
+                width: 100%;
+                max-width: 100%;
+                margin: 0 0 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-image"></div>
+
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <img src="/src/logo.png" alt="King Technology" onerror="this.style.display='none'; this.parentNode.innerText='KING TECH'">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="#" class="active">Sobre Nós</a></li>
+                    <li><a href="/servicos">Serviços</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="content-box">
+
+                <h1>Quem Somos</h1>
+
+                <img src="/src/logo2.png" alt="Equipe King Technology" class="about-img">
+
+                <p>
+                    A <strong>King Technology</strong> nasceu com um propósito claro: transformar a maneira como empresas e condomínios lidam com segurança e conectividade. Fundada com a visão de que a tecnologia não deve ser apenas uma ferramenta, mas sim uma aliada estratégica, nos consolidamos no mercado como referência em soluções integradas.
+                </p>
+
+                <p>
+                    Operando no estado de São Paulo, entendemos as complexidades e os desafios de segurança da região. Por isso, não oferecemos apenas "instalação de equipamentos", mas sim um projeto de engenharia completo. Desde o planejamento da infraestrutura de fibra óptica até a configuração fina de softwares de Inteligência Artificial para reconhecimento facial.
+                </p>
+
+                <p>
+                    Nossa equipe é formada por especialistas multidisciplinares. Isso significa que, ao contratar a King Technology, você não precisa lidar com três ou quatro fornecedores diferentes. Nós unificamos a TI, a Engenharia Elétrica e a Segurança Eletrônica em um único ponto de contato, garantindo agilidade na resolução de problemas e uma infraestrutura muito mais robusta.
+                </p>
+
+                <h2>Nossa Missão</h2>
+                <p>
+                    Prover tranquilidade e eficiência operacional através da tecnologia de ponta. Acreditamos que um ambiente seguro é a base para o crescimento de qualquer negócio e para a qualidade de vida em qualquer condomínio. Trabalhamos incansavelmente, 24 horas por dia, para que nossos sistemas estejam sempre ativos, monitorando e protegendo o que é mais importante para você.
+                </p>
+
+                <p>
+                    Seja através de portarias remotas que reduzem custos drasticamente, ou através de redes corporativas blindadas contra falhas, a King Technology é sinônimo de confiança e inovação.
+                </p>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 - King Technology - Todos os direitos reservados | <a href="/privacidade" style="color: #00d4ff;">Privacidade</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - King Technology</title>
+    <meta name="description" content="Fale com a King Technology" />
+    <meta name="author" content="King Technology" />
+    <link rel="icon" href="/src/ico.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+
+        .bg-image {
+            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+                              url('/src/bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #00d4ff;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 5%;
+        }
+
+        .contact-box {
+            background: rgba(20, 20, 20, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 15px;
+            max-width: 1000px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .contact-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .contact-info h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            border-left: 4px solid #00d4ff;
+            padding-left: 15px;
+            line-height: 1;
+        }
+
+        .info-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .info-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #ddd;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-list strong {
+            color: #fff;
+            margin-right: 8px;
+            min-width: 70px;
+        }
+
+        .icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 15px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        .contact-image {
+            flex: 1;
+            height: 400px;
+            position: relative;
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        @media (max-width: 850px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .contact-box {
+                flex-direction: column-reverse;
+                padding: 2rem;
+                text-align: center;
+            }
+
+            .contact-info {
+                text-align: center;
+                width: 100%;
+            }
+
+            .contact-info h1 {
+                border-left: none;
+                border-bottom: 3px solid #00d4ff;
+                padding-left: 0;
+                padding-bottom: 10px;
+                display: inline-block;
+            }
+
+            .info-list li {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .contact-image {
+                width: 100%;
+                height: 250px;
+            }
+
+            .btn-whatsapp {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-image"></div>
+
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <img src="/src/logo.png" alt="King Technology" onerror="this.style.display='none'; this.parentNode.innerText='KING TECH'">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/sobrenos">Sobre Nós</a></li>
+                    <li><a href="/servicos">Serviços</a></li>
+                    <li><a href="#" class="active">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="contact-box">
+
+                <div class="contact-info">
+                    <h1>Fale Conosco</h1>
+                    <p style="margin-bottom: 20px; color: #aaa;">Estamos prontos para atender sua empresa ou condomínio.</p>
+
+                    <ul class="info-list">
+                        <li>
+                            <span class="icon">🏢</span>
+                            <strong>Empresa:</strong> King Technology
+                        </li>
+                        <li>
+                            <span class="icon">📄</span>
+                            <strong>CNPJ:</strong> 26.759.591/0001-79
+                        </li>
+                        <li>
+                            <span class="icon">📍</span>
+                            <strong>Cidade:</strong> Guarujá - SP
+                        </li>
+                        <li>
+                            <span class="icon">✉️</span>
+                            <strong>E-mail:</strong> kingtech@protonmail.com
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/5544991375959?text=Ol%C3%A1%2C+vim+pelo+site+da+King+Technology+e+gostaria+de+um+or%C3%A7amento."
+                       target="_blank"
+                       class="btn-whatsapp">
+                       <span style="margin-right: 10px; font-size: 1.3rem;">📱</span> Iniciar Conversa no WhatsApp
+                    </a>
+                </div>
+
+                <div class="contact-image">
+                    <img src="/src/contato.png" alt="Atendimento King Technology">
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 - King Technology - Todos os direitos reservados | <a href="/privacidade" style="color: #00d4ff;">Privacidade</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>
